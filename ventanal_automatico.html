@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Ventanal TV</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+<link rel="alternate icon" href="/favicon.ico"/>
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"/>
+<meta name="theme-color" content="#0f1020"/>
+<meta name="description" content="Ventanal TV · señal familiar, Ventanal Kids, Cine, noticias y programación."/>
+<style>
+:root{--bg:#0f1020;--panel:#191b34;--panel2:#22254a;--text:#f7f7fb;--muted:#b8bdd7;--brand:#7c5cff;--brand2:#a897ff;--yellow:#ffd54a;--line:#343866;--kids:#25c3a8;--cine:#ff8a4c;--danger:#ff6b6b}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:linear-gradient(180deg,#101226,#0b0c18);color:var(--text);font-family:Inter,system-ui,Arial,sans-serif;min-height:100vh}a{color:inherit}.app{width:min(1180px,calc(100% - 28px));margin:auto}.top{position:sticky;top:0;z-index:30;background:rgba(15,16,32,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}.topin{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:900;font-size:22px;letter-spacing:-.6px}.logo{width:34px;height:34px;border:3px solid var(--brand2);border-radius:10px;display:grid;grid-template-columns:1fr 1fr;gap:2px;padding:3px}.logo i{background:var(--brand2);border-radius:2px}.logo i:nth-child(1){opacity:.3}.logo i:nth-child(2){opacity:.6}.logo i:nth-child(3){opacity:.6}.logo i:nth-child(4){background:var(--yellow)}.nav{display:flex;gap:8px;flex-wrap:wrap}.nav button{border:0;background:transparent;color:var(--muted);padding:8px 12px;border-radius:999px;font-weight:700;cursor:pointer}.nav button:hover,.nav button.active{background:var(--brand);color:#fff}.page{display:none;padding:28px 0 56px}.page.active{display:block}.hero{display:grid;grid-template-columns:1.25fr .75fr;gap:20px}.heroCard,.card{background:linear-gradient(180deg,var(--panel),#13152b);border:1px solid var(--line);border-radius:22px;padding:20px}.hero h1{font-size:clamp(36px,7vw,72px);line-height:.95;margin:8px 0 12px}.eyebrow{color:var(--yellow);font-weight:800;text-transform:uppercase;letter-spacing:.12em;font-size:12px}.muted{color:var(--muted)}.liveBadge{display:inline-flex;align-items:center;gap:8px;background:#251f34;border:1px solid #4b3b6b;padding:7px 11px;border-radius:999px;font-size:13px;font-weight:800}.dot{width:9px;height:9px;border-radius:50%;background:#ff4d4d;box-shadow:0 0 16px #ff4d4d}.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:800;cursor:pointer;background:var(--brand);color:#fff}.btn.secondary{background:var(--panel2)}.btn.kids{background:var(--kids);color:#062d27}.btn.cine{background:var(--cine);color:#2d1307}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.playerWrap{position:relative;border-radius:18px;overflow:hidden;background:#050509;border:1px solid var(--line);aspect-ratio:16/9}.playerWrap iframe{width:100%;height:100%;border:0}.playerPlaceholder{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:30px;background:radial-gradient(circle at 30% 20%,#302b63,#090a12 60%)}.schedule{display:grid;gap:10px}.slot{display:grid;grid-template-columns:72px 1fr auto;align-items:center;gap:10px;padding:11px 12px;border-radius:14px;background:#15172d;border:1px solid #2b2f55}.slot.now{background:linear-gradient(90deg,var(--brand),#5c46d8);border-color:#a897ff}.slot time{font-weight:900;color:var(--yellow)}.slot .small{font-size:12px;color:var(--muted)}.grid2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.feature{min-height:160px;border-radius:18px;padding:18px;display:flex;flex-direction:column;justify-content:end;background:linear-gradient(135deg,#2a2458,#161830);border:1px solid var(--line)}.feature.k{background:linear-gradient(135deg,#0b4a42,#0d2b34)}.feature.c{background:linear-gradient(135deg,#5b2d1c,#2c1720)}.feature h3{margin:0;font-size:26px}.feature p{margin:6px 0 0;color:#d9def8}.sectionTitle{font-size:28px;margin:30px 0 14px}.news{display:grid;gap:12px}.news article{padding:16px;border:1px solid var(--line);background:#15172d;border-radius:16px}.news h3{margin:0 0 6px}.toolbar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.status{font-size:14px;color:var(--muted)}.kidsHero{background:linear-gradient(135deg,#0f6c61,#1e3d65 55%,#422b73);border-radius:26px;padding:26px;border:1px solid #3c6d7d}.cineHero{background:linear-gradient(135deg,#7a3118,#1f1535 58%,#0c0d18);border-radius:26px;padding:26px;border:1px solid #6b3a2e}.poster{border-radius:16px;padding:16px;min-height:180px;display:flex;flex-direction:column;justify-content:flex-end;background:linear-gradient(160deg,#3847a7,#11152d);border:1px solid rgba(255,255,255,.12)}.poster:nth-child(2){background:linear-gradient(160deg,#d66a20,#2a1325)}.poster:nth-child(3){background:linear-gradient(160deg,#355a4a,#172019)}.poster h3{margin:0;font-size:24px}.pill{display:inline-block;background:rgba(255,255,255,.12);padding:5px 9px;border-radius:999px;font-size:12px;margin-bottom:10px}.catalog{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px}.catalog .item{padding:14px;border:1px solid var(--line);border-radius:16px;background:#15172d}.catalog .thumb{height:130px;border-radius:12px;background:linear-gradient(135deg,#6b5cff,#2c3168);margin-bottom:10px;display:flex;align-items:end;padding:12px;font-weight:900}.catalog .item:nth-child(2) .thumb{background:linear-gradient(135deg,#ff9f43,#7b1f2e)}.catalog .item:nth-child(3) .thumb{background:linear-gradient(135deg,#00b894,#146b5d)}.catalog .item:nth-child(4) .thumb{background:linear-gradient(135deg,#74b9ff,#30336b)}.catalog h4{margin:0 0 5px}.catalog p{margin:0;color:var(--muted);font-size:14px}.hidden{display:none!important}@media(max-width:900px){.hero{grid-template-columns:1fr}.grid3{grid-template-columns:1fr 1fr}.grid2{grid-template-columns:1fr}}@media(max-width:640px){.app{width:min(100% - 18px,1180px)}.topin{align-items:flex-start}.nav{gap:4px}.nav button{padding:7px 9px;font-size:13px}.grid3{grid-template-columns:1fr}.slot{grid-template-columns:58px 1fr}.slot button{grid-column:1/-1}.hero h1{font-size:44px}}
+</style>
+
+<style>
+.playerWrap iframe,.kidsPlayer iframe,.cinePlayer iframe{width:100%;height:100%;border:0;display:block;pointer-events:none;user-select:none}
+.cineLabel{display:flex;justify-content:space-between;align-items:center;padding:12px 18px;background:#17172a;border-bottom:1px solid #34345c}
+.cineLabel span{color:#b8b8d3;font-size:.9rem}
+#soundBtn{box-shadow:0 0 0 2px rgba(124,92,255,.22)}
+.ventanalAd{pointer-events:none}.ventanalAd h2{font-size:clamp(34px,6vw,68px);margin:12px 0}.ventanalAd .liveBadge{margin-top:14px}
+</style>
+
+<style id="v101styles">
+.playerWrap{position:relative}
+.playerWrap iframe{pointer-events:none!important}
+.vtvShield{position:absolute;inset:0;z-index:6;background:transparent;pointer-events:auto;cursor:default}
+.vtvAd{position:absolute;inset:0;z-index:20;display:flex;align-items:center;justify-content:center;overflow:hidden;background:
+radial-gradient(circle at 18% 20%,rgba(125,92,255,.38),transparent 34%),
+radial-gradient(circle at 82% 78%,rgba(255,180,65,.26),transparent 30%),#090a16;color:white}
+.vtvAdCard{width:min(82%,780px);text-align:center;padding:28px}
+.vtvAdBrand{font-size:13px;letter-spacing:.38em;font-weight:800;opacity:.72;margin-bottom:18px}
+.vtvAdTitle{font-size:clamp(34px,6vw,72px);font-weight:950;line-height:.96;margin:0}
+.vtvAdText{font-size:clamp(16px,2.2vw,24px);opacity:.82;margin:20px auto;max-width:650px}
+.vtvAdTag{display:inline-block;border:1px solid rgba(255,255,255,.32);border-radius:999px;padding:8px 14px;font-weight:800}
+.vtvAdBar{height:4px;background:rgba(255,255,255,.16);border-radius:99px;overflow:hidden;margin:24px auto 10px;max-width:560px}
+.vtvAdBar>i{display:block;height:100%;background:white}
+.vtvAdCount{font-variant-numeric:tabular-nums;font-size:13px;opacity:.62}
+.playerWrap:fullscreen{width:100%;height:100%;background:#000;border-radius:0}
+.playerWrap:fullscreen iframe,.playerWrap:fullscreen .playerPlaceholder{width:100%;height:100%}
+</style>
+
+</head>
+<body>
+<header class="top"><div class="app topin"><a class="brand" href="#inicio"><span class="logo"><i></i><i></i><i></i><i></i></span>Ventanal TV</a><nav class="nav" aria-label="Navegación"><button data-route="inicio" class="active">Inicio</button><button data-route="envivo">En vivo</button><button data-route="programacion">Programación</button><button data-route="noticias">Noticias</button><button data-route="kids">🧒 Ventanal Kids</button><button data-route="cine">🎬 Ventanal Cine</button></nav></div></header>
+<main class="app">
+<section class="page active" id="inicio"><div class="hero"><div class="heroCard"><span class="eyebrow">Pantalla oficial</span><h1 id="homeTitle">Ventanal TV</h1><p class="muted" id="homeDesc">Una señal familiar con televisión, cultura, humor, deporte y programas para disfrutar en casa.</p><div class="actions"><button class="btn" data-go="envivo">Ver señal en vivo</button><button class="btn secondary" data-go="programacion">Ver programación</button></div></div><div class="card"><div class="liveBadge"><span class="dot"></span> Ahora al aire</div><h2 id="nowName">Cargando…</h2><p class="muted" id="nowTime"></p><div class="schedule" id="nextMini"></div></div></div><h2 class="sectionTitle">Tus pantallas</h2><div class="grid3"><div class="feature"><span class="eyebrow">Canal principal</span><h3>Ventanal TV</h3><p>Actualidad, entretención, cultura y señal en vivo.</p><div class="actions"><button class="btn" data-go="envivo">Abrir</button></div></div><div class="feature k"><span class="eyebrow">Nuevo</span><h3>Ventanal Kids</h3><p>Series, juegos, aprendizaje y bloques con Danny Go!</p><div class="actions"><button class="btn kids" data-go="kids">Entrar</button></div></div><div class="feature c"><span class="eyebrow">Nuevo</span><h3>Ventanal Cine</h3><p>Una parrilla cinematográfica que cambia durante el día.</p><div class="actions"><button class="btn cine" data-go="cine">Entrar</button></div></div></div></section>
+<section class="page" id="envivo"><div class="toolbar"><div><span class="eyebrow">Señal principal</span><h1 id="liveTitle">En vivo</h1><p class="muted" id="liveDesc"></p></div><div class="actions"><button class="btn secondary" id="soundBtn">🔊 Activar sonido</button><button class="btn secondary" id="expandBtn">⛶ Expandir pantalla</button></div></div><div class="playerWrap" id="mainPlayer"><div class="playerPlaceholder"><div><div class="liveBadge"><span class="dot"></span> En vivo</div><h2 id="playerProgram">Preparando señal…</h2><p class="muted">Ventanal conectará automáticamente la señal del horario actual.</p></div></div></div><h2 class="sectionTitle">Lo que viene</h2><div class="schedule" id="mainSchedule"></div></section>
+<section class="page" id="programacion"><span class="eyebrow">Chile continental</span><h1>Programación de hoy</h1><p class="muted">La parrilla cambia automáticamente según la hora de Santiago.</p><div class="schedule" id="fullSchedule"></div></section>
+<section class="page" id="noticias"><div class="toolbar"><div><span class="eyebrow">Redacción Ventanal</span><h1>Noticias</h1></div><button class="btn" id="refreshNews">↻ Actualizar ahora</button></div><p class="status" id="newsStatus">Conectando con el servidor de noticias…</p><div class="news" id="newsList"></div></section>
+<section class="page" id="kids"><div class="kidsHero"><span class="eyebrow">Canal infantil oficial</span><h1>Ventanal Kids</h1><p>Una señal pensada para entretener y aprender. Series infantiles, movimiento, canciones, ciencia y aventuras con una programación diaria familiar.</p><div class="actions"><button class="btn kids" id="kidsPlay">▶ Ver bloque actual</button><button class="btn secondary" id="kidsScheduleBtn">Ver horario</button></div></div><div class="playerWrap" style="margin-top:18px" id="kidsPlayer"><div class="playerPlaceholder"><div><h2>Ventanal Kids</h2><p class="muted">Pulsa “Ver bloque actual” para cargar el contenido del horario.</p></div></div></div><h2 class="sectionTitle">Programación infantil</h2><div class="schedule" id="kidsSchedule"></div><h2 class="sectionTitle">Mundos para descubrir</h2><div class="catalog"><div class="item"><div class="thumb">Bluey</div><h4>Jugar e imaginar</h4><p>Aventuras familiares y creatividad desde el canal oficial.</p></div><div class="item"><div class="thumb">Pocoyó</div><h4>Risas y descubrimientos</h4><p>Episodios, canciones y aventuras para los más pequeños.</p></div><div class="item"><div class="thumb">Danny Go!</div><h4>Aprende moviéndote</h4><p>Baile, ejercicio, coordinación y diversión en un bloque educativo.</p></div><div class="item"><div class="thumb">Plaza Sésamo</div><h4>Aprender jugando</h4><p>Letras, números, emociones y valores con contenido oficial.</p></div></div></section>
+<section class="page" id="cine"><div class="cineHero"><span class="eyebrow">Sala de películas</span><h1>Ventanal Cine</h1><p>Una parrilla cinematográfica que va cambiando durante el día. La página muestra la película programada y reproduce contenido disponible y autorizado para la señal.</p><div class="actions"><button class="btn cine" id="cinePlay">▶ Ver función</button><button class="btn secondary" id="cineScheduleBtn">Ver cartelera</button></div></div><div class="playerWrap" style="margin-top:18px" id="cinePlayer"><div class="playerPlaceholder"><div><h2 id="cineNowTitle">Cartelera del día</h2><p class="muted" id="cineNowDesc">La función aparecerá aquí.</p></div></div></div><h2 class="sectionTitle">Cartelera diaria</h2><div class="schedule" id="cineSchedule"></div><h2 class="sectionTitle">Próximas favoritas</h2><div class="grid3"><div class="poster"><span class="pill">07:00</span><h3>Piratas del Caribe</h3><p>Gran aventura pirata.</p></div><div class="poster"><span class="pill">04:00</span><h3>Harry Potter</h3><p>Magia y fantasía.</p></div><div class="poster"><span class="pill">12:00</span><h3>Minions</h3><p>Mi Villano Favorito y mucho humor.</p></div></div></section>
+</main>
+<footer class="app" style="padding:30px 0;color:var(--muted)">© 2026 Ventanal TV · Canal familiar · Horario Chile continental</footer>
+<script>
+const ROUTES=['inicio','envivo','programacion','noticias','kids','cine'];
+const YT={
+ bluey:'https://www.youtube-nocookie.com/embed/8_E2BDYHPAI?autoplay=1&mute=1&rel=0',
+ pocoyo:'https://www.youtube-nocookie.com/embed/V2s32m5oEcw?autoplay=1&mute=1&rel=0',
+ minions:'https://www.youtube-nocookie.com/embed/P9-FCC6I7u0?autoplay=1&mute=1&rel=0'
+};
+let sound=false, mainLoaded=false, kidsLoaded=false, cineLoaded=false;
+function mainSchedule(){
+ const weekday=Number(new Intl.DateTimeFormat('en-US',{timeZone:'America/Santiago',weekday:'short'}).formatToParts(new Date()).find(x=>x.type==='weekday')?new Date().toLocaleDateString('en-US',{timeZone:'America/Santiago',weekday:'short'})!=='Sat'&&new Date().toLocaleDateString('en-US',{timeZone:'America/Santiago',weekday:'short'})!=='Sun':true);
+ const base=[['00:30','Ventanal de madrugada','madrugada'],['06:30','Ventanal Noticias','noticias'],['08:00','Buenos días, Chile · ¡A jugar!','manana'],['12:00','Desafío Ventanal','barrio'],['13:30','Ventanal Noticias','noticias'],['15:00','Tarde de juegos','sobremesa'],['17:00','Kosmo Studios','kosmo'],['18:00','Deportes extremos','extremos']];
+ if(weekday) base.push(['19:15','¡Qué Dice Chile!','quedice']);
+ else base.push(['19:00','Pantalla grande','cine']);
+ base.push(['21:00','Ventanal Noticias','noticias'],['22:30','La hora de reír','comedia']);
+ return base.sort((a,b)=>minutes(a[0])-minutes(b[0]));
+}
+let MAIN=mainSchedule();
+const KIDS=[['06:00','Pocoyó','pocoyo'],['08:00','Bluey','bluey'],['09:00','Danny Go! · Aprende y muévete','danny'],['10:00','Plaza Sésamo','sesamo'],['12:00','Pocoyó · Aventuras','pocoyo'],['14:00','Bluey · Imaginación','bluey'],['16:00','Danny Go! · Movimiento','danny'],['17:00','Canciones y juegos','music'],['19:00','Cuentos para compartir','stories'],['21:00','Buenas noches Kids','night']];
+const CINE=[['00:00','Monsters, Inc.','monsters'],['04:00','Harry Potter','harry'],['07:00','Piratas del Caribe','pirates'],['12:00','Minions','minions'],['16:00','Mi Villano Favorito','gru'],['19:00','Piratas del Caribe: nueva función','pirates'],['22:00','Harry Potter: noche mágica','harry']];
+function minutes(t){let [h,m]=t.split(':').map(Number);return h*60+m}
+function nowMin(){const p=new Intl.DateTimeFormat('es-CL',{timeZone:'America/Santiago',hour:'2-digit',minute:'2-digit',hour12:false}).formatToParts(new Date(typeof serverNow==='function'?serverNow():Date.now()));return (+p.find(x=>x.type==='hour').value)*60+(+p.find(x=>x.type==='minute').value)}
+function current(list){let n=nowMin(),idx=0;for(let i=0;i<list.length;i++){if(minutes(list[i][0])<=n)idx=i;else break}return idx}
+function renderRoute(){let r=location.hash.replace('#','')||'inicio';if(!ROUTES.includes(r))r='inicio';document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id===r));document.querySelectorAll('[data-route]').forEach(b=>b.classList.toggle('active',b.dataset.route===r));if(r==='envivo')loadMain();if(r==='kids')renderKids();if(r==='cine')renderCine();if(r==='noticias')refreshNews();window.scrollTo({top:0,behavior:'smooth'})}
+function scheduleHTML(list,idx,actions=''){return list.map((x,i)=>`<div class="slot ${i===idx?'now':''}"><time>${x[0]}</time><div><strong>${x[1]}</strong>${i===idx?'<div class="small">Ahora al aire</div>':''}</div>${actions?`<button class="btn secondary" data-play="${x[2]}">Ver</button>`:''}</div>`).join('')}
+function renderMain(){const idx=current(MAIN), n=MAIN[idx], next=MAIN.slice(idx+1,idx+4);document.getElementById('homeTitle').textContent=n[1];document.getElementById('homeDesc').textContent='Ahora en Ventanal TV · programación familiar durante todo el día.';document.getElementById('nowName').textContent=n[1];document.getElementById('nowTime').textContent=`Desde las ${n[0]} · Chile`;document.getElementById('nextMini').innerHTML=next.map(x=>`<div class="slot"><time>${x[0]}</time><div><strong>${x[1]}</strong></div></div>`).join('');document.getElementById('fullSchedule').innerHTML=scheduleHTML(MAIN,idx);document.getElementById('liveTitle').textContent=n[1];document.getElementById('liveDesc').textContent=`Señal correspondiente al horario actual (${n[0]}).`;document.getElementById('mainSchedule').innerHTML=scheduleHTML(MAIN,idx)}
+function embedVideo(id,title,startSeconds=0){
+ const origin=encodeURIComponent(location.origin);
+ const st=Math.max(0,Math.floor(startSeconds));
+ return `<iframe class="ytPlayer" data-video="${id}" src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&mute=1&controls=0&disablekb=1&fs=0&rel=0&playsinline=1&enablejsapi=1&origin=${origin}&start=${st}" title="${title||'Ventanal TV'}" referrerpolicy="strict-origin-when-cross-origin" allow="autoplay;encrypted-media" tabindex="-1"></iframe><div class="vtvShield" aria-hidden="true"></div>`;
+}
+let serverOffsetMs=0;
+async function syncServerClock(){
+ try{
+  const a=Date.now(),r=await fetch('/api/time?_='+a,{cache:'no-store'}),d=await r.json(),b=Date.now();
+  serverOffsetMs=Number(d.serverNow)-((a+b)/2);
+ }catch{}
+}
+function serverNow(){return Date.now()+serverOffsetMs}
+function santiagoParts(ms=serverNow()){
+ const parts=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Santiago',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false}).formatToParts(new Date(ms));
+ return Object.fromEntries(parts.filter(x=>x.type!=='literal').map(x=>[x.type,x.value]));
+}
+function secondsToday(ms=serverNow()){const p=santiagoParts(ms);return (+p.hour)*3600+(+p.minute)*60+(+p.second)+(ms%1000)/1000}
+function slotBounds(list){
+ const idx=current(list), start=minutes(list[idx][0])*60, end=(idx+1<list.length?minutes(list[idx+1][0])*60:24*3600);
+ return {idx,start,end,duration:end-start};
+}
+function mainPosition(){const b=slotBounds(MAIN), now=secondsToday();return {...b,elapsed:Math.max(0,now-b.start),remaining:Math.max(0,b.end-now)}}
+function showVentanalAds(box,remaining){
+ const ads=[
+  {title:'Ventanal Kids',text:'Ríe, muévete, aprende y descubre. Una pantalla hecha para los más chicos.',tag:'Todos los días en Ventanal'},
+  {title:'Ventanal Cine',text:'Aventuras, historias y funciones para compartir en familia.',tag:'Tu próxima función está por comenzar'},
+  {title:'Desafío Ventanal',text:'Preguntas, juegos, desafíos y mucha entretención. ¿Cuánto sabes tú?',tag:'Juega desde tu casa'},
+  {title:'Ventanal TV',text:'Una señal familiar. Entretención, deporte, juegos y actualidad durante todo el día.',tag:'Seguimos en instantes'}
+ ];
+ const left=Math.max(0,remaining), elapsed=180-left;
+ const idx=Math.min(ads.length-1,Math.floor(elapsed/45)), ad=ads[idx];
+ const pct=Math.max(0,Math.min(100,(elapsed%45)/45*100));
+ box.innerHTML=`<div class="vtvAd"><div class="vtvAdCard"><div class="vtvAdBrand">VENTANAL PRESENTA</div><h2 class="vtvAdTitle">${ad.title}</h2><p class="vtvAdText">${ad.text}</p><span class="vtvAdTag">${ad.tag}</span><div class="vtvAdBar"><i style="width:${pct}%"></i></div><div class="vtvAdCount">La programación continúa en ${Math.ceil(left)} s</div></div></div>`;
+}
+function ytCommand(func,args=[]){
+ document.querySelectorAll('iframe.ytPlayer').forEach(f=>{
+   try{f.contentWindow.postMessage(JSON.stringify({event:'command',func,args}),'*')}catch{}
+ });
+}
+function applySound(){
+ setTimeout(()=>ytCommand(sound?'unMute':'mute'),350);
+ setTimeout(()=>{if(sound)ytCommand('setVolume',[100])},450);
+}
+let signalAttempt=0, signalFailures=0;
+async function loadMain(force=false){
+ MAIN=mainSchedule(); renderMain();
+ const b=mainPosition(),n=MAIN[b.idx],box=document.getElementById('mainPlayer');
+ document.getElementById('playerProgram').textContent=n[1];
+ if(b.remaining<=180){showVentanalAds(box,b.remaining);mainLoaded=true;return;}
+ box.innerHTML=`<div class="playerPlaceholder"><div><h2>${n[1]}</h2><p class="muted">Sincronizando señal Ventanal…</p></div></div>`;
+ try{
+   const date=santiagoParts().year+'-'+santiagoParts().month+'-'+santiagoParts().day;
+   const target=Math.max(5,Math.round(b.duration/60));
+   const r=await fetch(`/api/videos?slot=${encodeURIComponent(n[2])}&targetMinutes=${target}&fecha=${date}&liveOnly=1&allowRecordedFallback=1&attempt=${signalAttempt}`);
+   const d=await r.json(); if(!r.ok||(!d.videoId&&!d.streamUrl)) throw new Error(d.error||'Sin señal');
+   if(d.streamUrl){
+     box.innerHTML=`<video class="nativeLive" autoplay playsinline ${sound?'':'muted'} style="width:100%;height:100%;object-fit:cover;background:#000" src="${d.streamUrl}"></video><div class="vtvShield" aria-hidden="true"></div>`;
+     const vid=box.querySelector('video'); if(vid){vid.muted=!sound;vid.volume=1;vid.play().catch(()=>{})}
+   }else{
+     const startAt=d.isLive?0:Math.max(0,Math.floor(mainPosition().elapsed));
+     box.innerHTML=embedVideo(d.videoId,n[1],startAt); applySound();
+   }
+   mainLoaded=true; signalFailures=0;
+   
+ }catch(e){
+   signalAttempt++; signalFailures++;
+   box.innerHTML=`<div class="vtvAd"><div class="vtvAdCard"><div class="vtvAdBrand">VENTANAL</div><h2 class="vtvAdTitle">${n[1]}</h2><p class="vtvAdText">Estamos buscando un concurso o juego familiar en vivo. La señal cambiará automáticamente cuando encontremos uno aprobado.</p><span class="vtvAdTag">Entretención para toda la familia</span></div></div>`;
+   const wait=signalFailures<3?1800:10000;
+   setTimeout(()=>loadMain(true),wait);
+ }
+}
+function renderKids(){const idx=current(KIDS);document.getElementById('kidsSchedule').innerHTML=scheduleHTML(KIDS,idx,'yes');document.querySelectorAll('#kidsSchedule [data-play]').forEach(b=>b.onclick=()=>playKids(b.dataset.play))}
+async function playKids(type){
+ kidsLoaded=true;
+ const map={
+  bluey:'Bluey',pocoyo:'Pocoyó',danny:'Danny Go! · Aprende y muévete',
+  sesamo:'Plaza Sésamo',music:'Canciones y juegos',stories:'Cuentos para compartir',night:'Buenas noches Kids'
+ };
+ const title=map[type]||'Ventanal Kids', box=document.getElementById('kidsPlayer');
+ box.innerHTML=`<div class="playerPlaceholder"><div><h2>${title}</h2><p class="muted">Preparando el bloque infantil…</p></div></div>`;
+ try{
+   const r=await fetch(`/api/videos?slot=${encodeURIComponent('kids-'+type)}&targetMinutes=${blockTargetMinutes()}&_=${Date.now()}`);
+   const d=await r.json(); if(!r.ok||!d.videoId) throw new Error(d.error||'No disponible');
+   box.innerHTML=embedVideo(d.videoId,title); applySound();
+ }catch(e){
+   box.innerHTML=`<div class="playerPlaceholder"><div><h2>${title}</h2><p class="muted">Este contenido no está disponible ahora. Ventanal Kids buscará otra opción familiar.</p><button class="btn" onclick="playKids('${type}')">Buscar otro</button></div></div>`;
+ }
+}
+function renderCine(){const idx=current(CINE);document.getElementById('cineSchedule').innerHTML=scheduleHTML(CINE,idx,'yes');document.querySelectorAll('#cineSchedule [data-play]').forEach(b=>b.onclick=()=>playCine(b.dataset.play));document.getElementById('cineNowTitle').textContent=CINE[idx][1];document.getElementById('cineNowDesc').textContent='La cartelera cambia automáticamente según la hora de Chile.'}
+async function playCine(type){
+ cineLoaded=true;
+ const map={pirates:'Piratas del Caribe',harry:'Harry Potter',minions:'Minions',gru:'Mi Villano Favorito',monsters:'Monsters, Inc.'};
+ const title=map[type]||'Ventanal Cine', box=document.getElementById('cinePlayer');
+ box.innerHTML=`<div class="playerPlaceholder"><div><h2>${title}</h2><p class="muted">Preparando la función dentro de Ventanal Cine…</p></div></div>`;
+ try{
+   const r=await fetch(`/api/videos?slot=${encodeURIComponent('cine-'+type)}&targetMinutes=${blockTargetMinutes()}&_=${Date.now()}`);
+   const d=await r.json(); if(!r.ok||!d.videoId) throw new Error(d.error||'No disponible');
+   box.innerHTML=`<div class="cineLabel"><strong>${title}</strong><span>Ventanal Cine</span></div>${embedVideo(d.videoId,title)}`;
+   applySound();
+ }catch(e){
+   box.innerHTML=`<div class="playerPlaceholder"><div><h2>${title}</h2><p class="muted">No encontramos material reproducible de esta función en este momento.</p><button class="btn" onclick="playCine('${type}')">Intentar otra vez</button></div></div>`;
+ }
+}
+async function refreshNews(){
+ const st=document.getElementById('newsStatus');st.textContent='Actualizando noticias automáticamente…';
+ try{
+  const r=await fetch('/api/noticias?_='+Date.now());const d=await r.json().catch(()=>({}));
+  if(!r.ok)throw new Error(d.detail||d.error||('HTTP '+r.status));
+  const arr=d.noticias||[];if(!arr.length)throw new Error('No llegaron noticias');
+  document.getElementById('newsList').innerHTML=arr.map(n=>`<article><div class="eyebrow">${n.categoria||'Actualidad'} · ${n.fuente||'Fuente'} · ${new Date(n.fecha||Date.now()).toLocaleString('es-CL')}</div><h3>${n.titulo}</h3>${n.bajada?`<p class="muted">${n.bajada}</p>`:''}</article>`).join('');
+  st.textContent=`Noticias automáticas · ${arr.length} titulares · última consulta ${new Date().toLocaleTimeString('es-CL',{hour:'2-digit',minute:'2-digit'})}`;
+ }catch(e){st.textContent='El servidor de noticias está temporalmente ocupado. Ventanal volverá a intentar automáticamente.'}
+}
+// navegación
+window.addEventListener('hashchange',renderRoute);document.querySelectorAll('[data-route]').forEach(b=>b.onclick=()=>location.hash=b.dataset.route);document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>location.hash=b.dataset.go);document.getElementById('soundBtn').onclick=()=>{
+ sound=!sound;
+ document.getElementById('soundBtn').textContent=sound?'🔇 Silenciar':'🔊 Activar sonido';
+ ytCommand(sound?'unMute':'mute');
+ if(sound) ytCommand('setVolume',[100]); document.querySelectorAll('video.nativeLive').forEach(v=>{v.muted=!sound;v.volume=1;if(sound)v.play().catch(()=>{})});
+};
+document.getElementById('expandBtn').onclick=async()=>{
+ const box=document.getElementById('mainPlayer');
+ try{
+   if(!document.fullscreenElement){await box.requestFullscreen();document.getElementById('expandBtn').textContent='⤢ Salir de pantalla completa'}
+   else{await document.exitFullscreen();document.getElementById('expandBtn').textContent='⛶ Expandir pantalla'}
+ }catch{}
+};
+document.addEventListener('fullscreenchange',()=>{document.getElementById('expandBtn').textContent=document.fullscreenElement?'⤢ Salir de pantalla completa':'⛶ Expandir pantalla'});
+document.getElementById('kidsPlay').onclick=()=>{const idx=current(KIDS);playKids(KIDS[idx][2])};document.getElementById('kidsScheduleBtn').onclick=()=>document.getElementById('kidsSchedule').scrollIntoView({behavior:'smooth'});document.getElementById('cinePlay').onclick=()=>{const idx=current(CINE);playCine(CINE[idx][2])};document.getElementById('cineScheduleBtn').onclick=()=>document.getElementById('cineSchedule').scrollIntoView({behavior:'smooth'});document.getElementById('refreshNews').onclick=refreshNews;
+let lastMainSlot='';
+function tick(){
+ MAIN=mainSchedule();
+ const key=MAIN[current(MAIN)].join('|');
+ renderMain();
+ if(location.hash==='#envivo' && key!==lastMainSlot){lastMainSlot=key;loadMain(true)}
+ if(location.hash==='#kids')renderKids();
+ if(location.hash==='#cine')renderCine();
+}
+syncServerClock().finally(()=>{renderMain();renderRoute();lastMainSlot=MAIN[current(MAIN)].join('|')});setInterval(()=>{tick();if(location.hash==='#envivo'){const b=mainPosition();if(b.remaining<=180)showVentanalAds(document.getElementById('mainPlayer'),b.remaining)}},1000);setInterval(syncServerClock,30000);setInterval(()=>{if(location.hash==='#noticias')refreshNews()},600000);
+
+// Recuperación automática de señal: si una emisión termina o falla, Ventanal busca otra inmediatamente.
+window.addEventListener('message',(ev)=>{
+ try{
+  const d=typeof ev.data==='string'?JSON.parse(ev.data):ev.data;
+  if(d?.event==='onStateChange' && Number(d.info)===0 && location.hash==='#envivo'){
+    signalAttempt++; loadMain(true);
+  }
+ }catch{}
+});
+setInterval(()=>{
+ if(location.hash!=='#envivo') return;
+ const b=mainPosition();
+ if(b.remaining<=180){showVentanalAds(document.getElementById('mainPlayer'),b.remaining);return}
+ if(!document.querySelector('#mainPlayer iframe.ytPlayer')) loadMain(true);
+},5000);
+// Re-sincroniza la página de forma preventiva sin dejar una señal congelada.
+setInterval(()=>{ if(location.hash==='#envivo' && document.visibilityState==='visible') syncServerClock(); },15000);
+
+</script>
+
+<script>
+(function(){
+  // Ventanal nunca envía al espectador fuera del sitio por un video no embebible.
+  document.addEventListener("click", function(e){
+    const a=e.target.closest("a");
+    if(!a) return;
+    const href=a.getAttribute("href")||"";
+    const txt=(a.textContent||"").toLowerCase();
+    if(/^https?:\/\//i.test(href) && /(youtube|canal oficial|disney|plataforma|ver película|ver video)/i.test(txt)){
+      e.preventDefault();
+      if(window.estadoVideo) window.estadoVideo="";
+      if(typeof window.pintarReproductor==="function") window.pintarReproductor(true);
+    }
+  }, true);
+})();
+
+
+function blockTargetMinutes(){
+ try{
+   const route=location.hash.replace('#','');
+   const list=route==='kids'?KIDS:(route==='cine'?CINE:MAIN);
+   return Math.max(5,Math.round(slotBounds(list).duration/60));
+ }catch(e){return 60}
+}
+
+
+setInterval(async()=>{
+ try{
+  if(location.hash!=='#envivo') return;
+  const n=nowMain(), box=document.getElementById('mainPlayer');
+  if(!n || mainPosition().remaining<=180) return;
+  const currentFrame=box.querySelector('iframe.ytPlayer');
+  if(!currentFrame) return;
+  // Ask specifically for a fresh LIVE option. If available, loadMain rotates into the live pool.
+  const target=Math.max(5,Math.round(mainPosition().duration/60));
+  const date=serverNow().toLocaleDateString('en-CA',{timeZone:'America/Santiago'});
+  const r=await fetch(`/api/videos?slot=${encodeURIComponent(n[2])}&targetMinutes=${target}&fecha=${date}&liveOnly=1&attempt=${signalAttempt+1}`);
+  if(r.ok){ const d=await r.json(); if(d?.isLive){ signalAttempt++; loadMain(true); } }
+ }catch{}
+},30000);
+
+</script>
+</body></html>
